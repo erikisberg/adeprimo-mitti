@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Sollentunahem",
+    "url": "https://www.sollentunahem.se/om-oss/aktiviteter/",
+    "category": "housing"
+  },
+  {
+    "name": "Sollentuna kommun",
+    "url": "https://www.sollentuna.se/",
+    "category": "municipality"
+  },
+  {
+    "name": "Sollentuna kommun - Nyheter & Press",
+    "url": "https://www.sollentuna.se/nyheter--press/",
+    "category": "municipality"
+  },
+  {
+    "name": "Solom",
+    "url": "https://solom.se/",
+    "category": "municipality"
+  },
+  {
+    "name": "Sollentuna kommunfastigheter AB",
+    "url": "https://www.skab.se/nyheter",
+    "category": "housing"
+  },
+  {
+    "name": "Sollentuna FK - Aktuellt",
+    "url": "https://www.sollentunafk.se/aktuellt/",
+    "category": "sports"
+  },
+  {
+    "name": "Sollentuna Hockey",
+    "url": "http://www.sollentunahockey.com/",
+    "category": "sports"
+  },
+  {
+    "name": "Sollentunagymnasterna",
+    "url": "https://www.sollentunagymnasterna.se/start/?ID=2936",
+    "category": "sports"
+  },
+  {
+    "name": "Edsvik",
+    "url": "https://www.sollentuna.se/uweb/edsvik/stallbacken-kultur/evenemang/",
+    "category": "culture"
+  },
+  {
+    "name": "Polisen",
+    "url": "https://polisen.se/aktuellt/polisens-nyheter/1/?lpfm.loc=Sollentuna",
+    "category": "police"
+  },
+  {
+    "name": "Hembygdsf\u00f6reningen",
+    "url": "https://sollentunahembygd.se/",
+    "category": "community"
+  },
+  {
+    "name": "Scouter s\u00f6dra",
+    "url": "https://www.sollentunasodra.se/",
+    "category": "community"
+  },
+  {
+    "name": "Scouter norra",
+    "url": "https://sollentunanorra.scout.se/nyheter/",
+    "category": "community"
+  }
+]

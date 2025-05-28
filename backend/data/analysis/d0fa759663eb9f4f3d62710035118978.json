@@ -1,0 +1,11 @@
+{
+  "url": "https://www.sollentuna.se/uweb/edsvik/stallbacken-kultur/evenemang/",
+  "content": "",
+  "analysis": {
+    "analysis": "Automated analysis (OpenAI error: 401 Client Error: Unauthorized for url: https://api.openai.com/v1/threads - Incorrect API key provided: sk-proj-*********************************************************************************************************************************************************_IA}. You can find your API key at https://platform.openai.com/account/api-keys.): Interest score 1/5.",
+    "score": 1,
+    "timestamp": "2025-05-28T09:19:07.939835",
+    "extracted_news": []
+  },
+  "stored_at": "2025-05-28T09:19:07.939983"
+}

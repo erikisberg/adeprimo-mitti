@@ -1,0 +1,66 @@
+{
+  "url": "https://www.skab.se/nyheter",
+  "content": "# https://www.skab.se/nyheter\n\nH\u00e4r hittar du det senaste nyheterna om vad som h\u00e4nder hos oss p\u00e5 Sollentuna Kommunfastigheter AB. Var uppdaterad p\u00e5 vad som h\u00e4nder inom kommunen!\n\nH\u00e4r hittar du det senaste nyheterna om vad som h\u00e4nder hos oss p\u00e5 Sollentuna Kommunfastigheter AB. Var uppdaterad p\u00e5 vad som h\u00e4nder inom kommunen!\n\n## Nyheter\n\n### Vernissage (2025-05-23)\n\n\n\n### Vilket dr\u00f6mprojekt! (2025-05-23)\n\n\n\n### \u00d6ppet hus/ f\u00f6rhandstitt V\u00e4sj\u00f6skola och f\u00f6rskola! (2025-05-13)\n\n\n\n### Invigning av Sofiel",
+  "analysis": {
+    "analysis": "Automated analysis (OpenAI error: 404 Client Error: Not Found for url: https://api.openai.com/v1/threads/thread_g6SFEW9OuSWLs7azCFNYhiz9/runs - No assistant found with id 'asst_2ISW5mAXOzsCOK0sNCxYN4S9'.): Interest score 2/5.",
+    "score": 2,
+    "timestamp": "2025-05-28T10:36:35.010290",
+    "extracted_news": [
+      {
+        "title": "Vernissage",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-05-23",
+        "snippet": ""
+      },
+      {
+        "title": "Vilket dr\u00f6mprojekt!",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-05-23",
+        "snippet": ""
+      },
+      {
+        "title": "\u00d6ppet hus/ f\u00f6rhandstitt V\u00e4sj\u00f6skola och f\u00f6rskola!",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-05-13",
+        "snippet": ""
+      },
+      {
+        "title": "Invigning av Sofielundsskolans konstgr\u00e4splan",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-04-29",
+        "snippet": ""
+      },
+      {
+        "title": "Renovering av simhallen",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-04-08",
+        "snippet": ""
+      },
+      {
+        "title": "Fr\u00e5n grusyta till konstgr\u00e4splan!",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-04-04",
+        "snippet": ""
+      },
+      {
+        "title": "Renovering av friidrottsanl\u00e4ggningen p\u00e5 Sollentunavallen",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-03-31",
+        "snippet": ""
+      },
+      {
+        "title": "Mobilitetshus V\u00e4sj\u00f6n",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-02-14",
+        "snippet": ""
+      },
+      {
+        "title": "Helgarbete igen!",
+        "url": "https://www.skab.se/nyheter",
+        "date": "2025-02-07",
+        "snippet": ""
+      }
+    ]
+  },
+  "stored_at": "2025-05-28T10:36:35.010600"
+}

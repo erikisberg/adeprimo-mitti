@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: mitti-scraper-ui
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: true
+
+  - type: cron
+    name: mitti-scraper-job
+    env: python
+    schedule: "0 */1 * * *"  # Run hourly
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: FIRECRAWL_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_ASSISTANT_ID
+        sync: false
+      - key: SLACK_WEBHOOK_URL
+        sync: false
+      - key: SLACK_CHANNEL
+        sync: false
+      - key: SLACK_BOT_TOKEN
+        sync: false

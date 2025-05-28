@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "browser-tools": {
+      "command": "npx",
+      "args": [
+        "@agentdeskai/browser-tools-mcp@1.2.0"
+      ]
+    },
+    "firecrawl-mcp": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-11d3db51661b4767b68cfff1d58ce176"
+      }
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--access-token",
+        "sbp_13d392906c4d09d0177473008feb5f93c4c76b42"
+      ]
+    }
+  }
+} 

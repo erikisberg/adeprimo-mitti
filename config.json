@@ -1,0 +1,32 @@
+{
+  "firecrawl_api_key": "fc-11d3db51661b4767b68cfff1d58ce176",
+  "openai_api_key": "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", 
+  "openai_assistant_id": "asst_2ISW5mAXOzsCOK0sNCxYN4S9",
+  "url_list_path": "urls.json",
+  "content_storage_dir": "data/history",
+  "analysis_storage_dir": "data/analysis",
+  "similarity_threshold": 0.9,
+  "scraping": {
+    "timeout": 30,
+    "max_content_length": 100000,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "fallback_to_direct": true
+  },
+  "notifications": {
+    "slack": {
+      "enabled": true,
+      "webhook_url": "https://hooks.slack.com/services/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",
+      "min_rating_to_notify": 2,
+      "include_content_preview": true,
+      "channel": "mitti-ai-1"
+    },
+    "resend": {
+      "enabled": true,
+      "api_key": "re_FTiMfwGd_7F3UBTQDxczHdmJiZodbB76u",
+      "audience_id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "from_email": "Mitti AI <onboarding@resend.dev>",
+      "min_rating_to_notify": 2,
+      "send_daily_summary": true
+    }
+  }
+} 

@@ -1,0 +1,40 @@
+{
+  "url": "https://www.sollentuna.se/",
+  "content": "# https://www.sollentuna.se/\n\nSollentuna kommuns officiella webbplats med information och tj\u00e4nster till boende, bes\u00f6kare och f\u00f6retagare. Sollentuna, en av Sveriges f\u00f6retagsv\u00e4nligaste kommuner.\n\nSollentuna kommuns officiella webbplats med information och tj\u00e4nster till boende, bes\u00f6kare och f\u00f6retagare. Sollentuna, en av Sveriges f\u00f6retagsv\u00e4nligaste kommuner.\n\n## Nyheter\n\n### Rapport om Silverdalsskolan och AST-enheten godk\u00e4ndes (2025-05-28)\n\nVid utbildningsn\u00e4mndens sammantr\u00e4de den 27 maj 2025 godk\u00e4n",
+  "analysis": {
+    "analysis": "1. **Rapport om Silverdalsskolan och AST-enheten godk\u00e4ndes (2025-05-28)**\n   - **Betyg: 3**\n   - F\u00f6rklaring: Denna nyhet \u00e4r m\u00e5ttligt intressant f\u00f6r lokala inv\u00e5nare eftersom det handlar om skolor och utbildning, som \u00e4r av stor betydelse f\u00f6r m\u00e5nga familjer i kommunen. Beslut kring avvecklingen av Silverdalsskolan och f\u00f6r\u00e4ndringar i den s\u00e4rskilda undervisningsgruppen (AST) kan p\u00e5verka ett antal familjer och elever direkt.\n\n2. **Vi tar n\u00e4sta steg f\u00f6r minskad klimatp\u00e5verkan (2025-05-27)**\n   - **Betyg: 4**\n   - F\u00f6rklaring: Nyheten om att det har tagits fram f\u00e4rdplaner f\u00f6r minskad klimatp\u00e5verkan \u00e4r mycket intressant f\u00f6r den bredare allm\u00e4nheten, s\u00e4rskilt de som \u00e4r engagerade i milj\u00f6- och h\u00e5llbarhetsfr\u00e5gor. Dessa steg kan ha l\u00e5ngsiktiga effekter som p\u00e5verkar s\u00e5v\u00e4l kommunen som dess inv\u00e5nare.\n\n3. **\u00c4ndrad pendelt\u00e5gstrafik genom Sollentuna under sommaren (2025-05-22)**\n   - **Betyg: 3**\n   - F\u00f6rklaring: \u00c4ndringar i pendelt\u00e5gstrafiken p\u00e5verkar m\u00e5nga m\u00e4nniskors dagliga pendling och \u00e4r d\u00e4rf\u00f6r viktig information f\u00f6r dem som dagligen anv\u00e4nder sig av pendelt\u00e5g genom Sollentuna. Trots att det \u00e4r en tillf\u00e4llig f\u00f6r\u00e4ndring, \u00e4r det angel\u00e4get f\u00f6r inv\u00e5nare och bes\u00f6kare att k\u00e4nna till.\n\n4. **Ny socialtj\u00e4nstlag fr\u00e5n 1 juli 2025 (2025-05-21)**\n   - **Betyg: 4**\n   - F\u00f6rklaring: En ny socialtj\u00e4nstlag som tr\u00e4dde i kraft representerar en betydande f\u00f6r\u00e4ndring i hur socialtj\u00e4nsten fungerar, vilket p\u00e5verkar alla som kommer i kontakt med dessa tj\u00e4nster. \u00c4ndringen kan ha stora konsekvenser f\u00f6r inv\u00e5nare som beh\u00f6ver socialtj\u00e4nstens st\u00f6d, och \u00e4r d\u00e4rf\u00f6r mycket intressant och relevant information.",
+    "rating": "1",
+    "timestamp": "2025-05-28T13:55:29.410922",
+    "extracted_news": [
+      {
+        "title": "Rapport om Silverdalsskolan och AST-enheten godk\u00e4ndes",
+        "url": "https://www.sollentuna.se/",
+        "date": "2025-05-28",
+        "snippet": "Vid utbildningsn\u00e4mndens sammantr\u00e4de den 27 maj 2025 godk\u00e4ndes \u00e5terrapporteringen av planen f\u00f6r att avveckla Silverdalsskolan, samt f\u00f6rslaget om ny placering f\u00f6r den kommungemensamma s\u00e4rskilda undervisningsgruppen (AST).",
+        "rating": 3
+      },
+      {
+        "title": "Vi tar n\u00e4sta steg f\u00f6r minskad klimatp\u00e5verkan",
+        "url": "https://www.sollentuna.se/",
+        "date": "2025-05-27",
+        "snippet": "Sollentuna kommunkoncern har nu tagit fram f\u00e4rdplaner f\u00f6r tv\u00e5 viktiga omr\u00e5den: byggande och livsmedel. Det \u00e4r en viktig milstolpe i v\u00e5rt arbete f\u00f6r att minska klimatp\u00e5verkan fr\u00e5n v\u00e5r verksamhet.",
+        "rating": 4
+      },
+      {
+        "title": "\u00c4ndrad pendelt\u00e5gstrafik genom Sollentuna under sommaren",
+        "url": "https://www.sollentuna.se/",
+        "date": "2025-05-22",
+        "snippet": "28 juni-9 augusti kommer H\u00e4ggviks pendelt\u00e5gsstation att vara helt st\u00e4ngd. Anledningen \u00e4r de arbeten som Trafikverket g\u00f6r f\u00f6r att kunna \u00f6ppna en ny sydlig entr\u00e9 till H\u00e4ggviks station. \u00c4ven trafik till och fr\u00e5n Sollentuna station p\u00e5verkas.",
+        "rating": 3
+      },
+      {
+        "title": "Ny socialtj\u00e4nstlag fr\u00e5n 1 juli 2025",
+        "url": "https://www.sollentuna.se/",
+        "date": "2025-05-21",
+        "snippet": "Ig\u00e5r beslutade riksdagen att en ny socialtj\u00e4nstlag tr\u00e4der i kraft den 1 juli 2025. Den ska ers\u00e4tta nuvarande lag och g\u00f6ra det enklare att komma i kontakt med socialtj\u00e4nsten och s\u00e4tta fokus p\u00e5 f\u00f6rebyggande insatser.",
+        "rating": 4
+      }
+    ]
+  },
+  "stored_at": "2025-05-28T13:55:29.411070"
+}

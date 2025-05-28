@@ -1,0 +1,29 @@
+{
+  "url": "https://sollentunahembygd.se/",
+  "title": "https://sollentunahembygd.se/",
+  "content": "# https://sollentunahembygd.se/\n\nA local heritage association in Sollentuna, Sweden, focusing on cultural events and community activities.\n\nSollentuna Hembygdsf\u00f6rening\n\n## Nyheter\n\n### NATIONALDAGSAFTON (2025-06-05T15:00:00Z)\n\nAllspel och spel fr\u00e5n scenen fr\u00e5n kl 1500. Alla \u00e4r v\u00e4lkomna att anm\u00e4la sig p\u00e5 spellistan vid scenen. Kaffeservering och korv. Dans p\u00e5 riktig loge kl 1800. M\u00f6jlighet till buskspel hela tiden. V\u00e4lkommen!\n\n### DRICK DIG FRISK! (2025-06-11T20:00:00Z)\n\nI fullm\u00e5nens sken bes\u00f6ker vi offerk\u00e4llan vid Landsnora. Lyssna p\u00e5 fiol och nyckelharpa. Ta med eget dryckesk\u00e4rl (ej plastmugg). Vi m\u00f6ts inne i kvarnen kl 20.\n\n## Kontakt\n\nVisit the website for more information.",
+  "html": "",
+  "extracted_news": [
+    {
+      "date": "2025-06-05T15:00:00Z",
+      "title": "NATIONALDAGSAFTON",
+      "content": "Allspel och spel fr\u00e5n scenen fr\u00e5n kl 1500. Alla \u00e4r v\u00e4lkomna att anm\u00e4la sig p\u00e5 spellistan vid scenen. Kaffeservering och korv. Dans p\u00e5 riktig loge kl 1800. M\u00f6jlighet till buskspel hela tiden. V\u00e4lkommen!",
+      "first_seen": "2025-05-22T15:41:33.385007",
+      "url": "https://sollentunahembygd.se/"
+    },
+    {
+      "date": "2025-06-11T20:00:00Z",
+      "title": "DRICK DIG FRISK!",
+      "content": "I fullm\u00e5nens sken bes\u00f6ker vi offerk\u00e4llan vid Landsnora. Lyssna p\u00e5 fiol och nyckelharpa. Ta med eget dryckesk\u00e4rl (ej plastmugg). Vi m\u00f6ts inne i kvarnen kl 20.",
+      "first_seen": "2025-05-22T15:41:33.385011",
+      "url": "https://sollentunahembygd.se/"
+    }
+  ],
+  "general_info": {
+    "body": "Sollentuna Hembygdsf\u00f6rening",
+    "description": "A local heritage association in Sollentuna, Sweden, focusing on cultural events and community activities.",
+    "contact_info": "Visit the website for more information."
+  },
+  "timestamp": "2025-05-28T19:25:44.988038",
+  "stored_at": "2025-05-28T19:26:06.561245"
+}
