@@ -17,7 +17,10 @@ class OpenAIAnalyzer:
         """Initialize with OpenAI API key and Assistant ID."""
         # Clean the API key to remove any whitespace or newlines
         self.api_key = api_key.strip() if api_key else ""
-        self.assistant_id = assistant_id
+        self.assistant_id = assistant_id.strip() if assistant_id else ""
+        
+        # Add extra logging for debugging
+        logger.info(f"OpenAIAnalyzer initialized with assistant ID: {self.assistant_id}")
         
         # Initialize OpenAI client
         if self.api_key and not self.api_key.startswith("your_"):

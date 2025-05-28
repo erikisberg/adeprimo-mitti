@@ -52,9 +52,11 @@ def init_url_db(_supabase: Optional[Client] = None):
     return URLDatabase(_supabase, "backend/urls.json")
 
 # Initialize monitor
-@st.cache_resource
+@st.cache_resource(hash_funcs={str: lambda _: st.secrets.get("OPENAI_ASSISTANT_ID", "")})
 def init_monitor(_supabase: Optional[Client] = None):
     """Initialize the content monitor."""
+    assistant_id = st.secrets.get("OPENAI_ASSISTANT_ID", "")
+    logger.info(f"Initializing ContentMonitor with assistant ID from secrets: {assistant_id}")
     return ContentMonitor("backend/config.json", _supabase)
 
 def save_to_supabase(supabase: Client, results: List[Dict]):
