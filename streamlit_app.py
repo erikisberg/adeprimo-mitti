@@ -19,6 +19,7 @@ from config import ConfigManager
 from monitor import ContentMonitor
 from url_database import URLDatabase
 from supabase import create_client, Client
+from utils import logger
 
 # Page config
 st.set_page_config(
