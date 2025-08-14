@@ -51,6 +51,13 @@ class URLDatabase:
             return []
         
         try:
+            # Test connection first
+            response = self.supabase.table("monitored_urls")\
+                .select("count", count="exact")\
+                .limit(1)\
+                .execute()
+            
+            # If we get here, connection is working, now get the actual data
             response = self.supabase.table("monitored_urls")\
                 .select("*")\
                 .eq("active", True)\
@@ -67,7 +74,15 @@ class URLDatabase:
                 })
             return urls
         except Exception as e:
-            logger.error(f"Error fetching URLs from Supabase: {str(e)}")
+            error_msg = str(e)
+            if "Name or service not known" in error_msg:
+                logger.error("DNS resolution failed - cannot reach Supabase host")
+            elif "Connection refused" in error_msg:
+                logger.error("Connection refused - Supabase service may be down")
+            elif "timeout" in error_msg.lower():
+                logger.error("Connection timeout - network issues or Supabase service slow")
+            else:
+                logger.error(f"Error fetching URLs from Supabase: {error_msg}")
             logger.debug(traceback.format_exc())
             return []
     

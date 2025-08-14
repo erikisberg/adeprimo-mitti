@@ -36,15 +36,28 @@ def init_supabase() -> Optional[Client]:
     supabase_url = st.secrets.get("SUPABASE_URL", "")
     supabase_key = st.secrets.get("SUPABASE_KEY", "")
     
-    if supabase_url and supabase_key:
+    if not supabase_url or not supabase_key:
+        st.warning("⚠️ Supabase credentials not found in secrets")
+        return None
+    
+    try:
+        # Test the connection by making a simple query
+        client = create_client(supabase_url, supabase_key)
+        
+        # Test connection with a simple query
         try:
-            client = create_client(supabase_url, supabase_key)
+            # Try to access a table to verify connection
+            response = client.table("monitored_urls").select("count", count="exact").limit(1).execute()
             st.success("✅ Connected to Supabase!")
             return client
-        except Exception as e:
-            st.error(f"Error connecting to Supabase: {str(e)}")
+        except Exception as connection_error:
+            st.error(f"❌ Supabase connection test failed: {str(connection_error)}")
+            st.info("This might be due to network issues or incorrect credentials")
             return None
-    return None
+            
+    except Exception as e:
+        st.error(f"❌ Error creating Supabase client: {str(e)}")
+        return None
 
 # Initialize URL database
 @st.cache_resource
@@ -275,20 +288,33 @@ def manage_urls_tab(url_db):
 
 def main():
     """Main function to run the Streamlit app."""
+    # Initialize Supabase with better error handling
+    supabase = None
     try:
-        # Try to initialize Supabase
         supabase = init_supabase()
-        st.session_state["supabase_initialized"] = True
+        if supabase:
+            st.session_state["supabase_initialized"] = True
+            st.session_state["supabase_error_shown"] = False
+        else:
+            st.session_state["supabase_initialized"] = False
+            if "supabase_error_shown" not in st.session_state:
+                st.warning("⚠️ Supabase connection failed. The app will run with local storage only.")
+                st.info("Check your Supabase credentials and network connection.")
+                st.session_state["supabase_error_shown"] = True
     except Exception as e:
-        supabase = None
         st.session_state["supabase_initialized"] = False
         if "supabase_error_shown" not in st.session_state:
-            st.error(f"Failed to initialize Supabase: {e}")
+            st.error(f"❌ Critical error initializing Supabase: {str(e)}")
+            st.info("The app will run with local storage only.")
             st.session_state["supabase_error_shown"] = True
 
     # Initialize databases and monitor
-    monitor = init_monitor(_supabase=supabase)
-    url_db = init_url_db(_supabase=supabase)
+    try:
+        monitor = init_monitor(_supabase=supabase)
+        url_db = init_url_db(_supabase=supabase)
+    except Exception as e:
+        st.error(f"❌ Error initializing components: {str(e)}")
+        st.stop()
     
     # Header
     st.title("🤖 Mitti AI - Nyhetsövervakning")
@@ -297,6 +323,19 @@ def main():
     # Sidebar
     with st.sidebar:
         st.header("⚙️ Inställningar")
+        
+        # Connection status
+        if st.session_state.get("supabase_initialized", False):
+            st.success("🟢 Supabase ansluten")
+        else:
+            st.error("🔴 Supabase ej ansluten")
+            st.info("Appen använder lokal lagring")
+            
+            # Retry button
+            if st.button("🔄 Försök ansluta igen", use_container_width=True):
+                st.rerun()
+        
+        st.divider()
         
         min_rating = st.slider(
             "Lägsta betyg att visa",
