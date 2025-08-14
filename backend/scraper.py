@@ -299,7 +299,7 @@ class ContentScraper:
             }
         
     def _scrape_direct(self, url: str) -> Dict:
-        """Scrape content directly using requests."""
+        """Scrape content directly using requests with improved news extraction."""
         try:
             logger.info(f"Scraping URL directly: {url}")
             response = requests.get(url, headers=self.direct_headers, timeout=30)
@@ -314,7 +314,7 @@ class ContentScraper:
             if title_match:
                 title = title_match.group(1).strip()
             
-            # Extract main content - simplified approach
+            # Extract main content - improved approach
             # Remove script and style elements
             content = re.sub(r"<script[^>]*>.*?</script>", "", html_content, flags=re.DOTALL | re.IGNORECASE)
             content = re.sub(r"<style[^>]*>.*?</style>", "", content, flags=re.DOTALL | re.IGNORECASE)
@@ -324,22 +324,107 @@ class ContentScraper:
             if body_match:
                 content = body_match.group(1)
             
-            # Remove HTML tags
-            content = re.sub(r"<[^>]*>", " ", content)
+            # Try to extract news items using common patterns
+            news_items = self._extract_news_from_html(html_content)
             
+            # Remove HTML tags for plain text
+            plain_content = re.sub(r"<[^>]*>", " ", content)
             # Clean up whitespace
-            content = re.sub(r"\s+", " ", content).strip()
+            plain_content = re.sub(r"\s+", " ", plain_content).strip()
+            
+            # Generate synthetic content similar to Firecrawl format
+            synthetic_content = f"# {title or url}\n\n"
+            if news_items:
+                synthetic_content += "## Nyheter\n\n"
+                for item in news_items:
+                    item_title = item.get("title", "")
+                    item_date = item.get("date", "")
+                    item_content = item.get("content", "")
+                    
+                    if item_date:
+                        synthetic_content += f"### {item_title} ({item_date})\n\n"
+                    else:
+                        synthetic_content += f"### {item_title}\n\n"
+                        
+                    if item_content:
+                        synthetic_content += f"{item_content}\n\n"
+            
+            # Add general content
+            synthetic_content += f"## Innehåll\n\n{plain_content[:2000]}...\n\n"
             
             return {
                 "url": url,
-                "title": title,
-                "content": content[:self.max_content_length],  # Use config value for content length
+                "title": title or url,
+                "content": synthetic_content.strip(),
                 "html": html_content[:5000],  # Store a subset of the HTML
+                "extracted_news": news_items,
+                "general_info": {
+                    "body": plain_content[:1000],
+                    "description": title or "No description available"
+                },
                 "timestamp": datetime.now().isoformat()
             }
         except requests.RequestException as e:
             logger.error(f"Error scraping URL directly {url}: {str(e)}")
             return {"error": str(e), "content": "", "timestamp": datetime.now().isoformat()}
+    
+    def _extract_news_from_html(self, html_content: str) -> List[Dict]:
+        """Extract news items from HTML using common patterns."""
+        news_items = []
+        
+        try:
+            # Look for common news patterns
+            # Pattern 1: Article tags
+            article_patterns = [
+                r'<article[^>]*>(.*?)</article>',
+                r'<div[^>]*class="[^"]*news[^"]*"[^>]*>(.*?)</div>',
+                r'<div[^>]*class="[^"]*article[^"]*"[^>]*>(.*?)</div>',
+                r'<div[^>]*class="[^"]*post[^"]*"[^>]*>(.*?)</div>',
+                r'<li[^>]*class="[^"]*news[^"]*"[^>]*>(.*?)</li>'
+            ]
+            
+            for pattern in article_patterns:
+                matches = re.findall(pattern, html_content, re.IGNORECASE | re.DOTALL)
+                for match in matches[:5]:  # Limit to 5 items
+                    # Extract title
+                    title_match = re.search(r'<h[1-6][^>]*>(.*?)</h[1-6]>', match, re.IGNORECASE | re.DOTALL)
+                    title = title_match.group(1).strip() if title_match else "Nyhet"
+                    
+                    # Extract date
+                    date_match = re.search(r'<time[^>]*>(.*?)</time>', match, re.IGNORECASE | re.DOTALL)
+                    date = date_match.group(1).strip() if date_match else ""
+                    
+                    # Extract content
+                    content_match = re.search(r'<p[^>]*>(.*?)</p>', match, re.IGNORECASE | re.DOTALL)
+                    content = content_match.group(1).strip() if content_match else ""
+                    
+                    # Clean HTML tags
+                    title = re.sub(r'<[^>]*>', '', title)
+                    content = re.sub(r'<[^>]*>', '', content)
+                    
+                    if title and title != "Nyhet":
+                        news_items.append({
+                            "title": title,
+                            "date": date,
+                            "content": content[:200]  # Limit content length
+                        })
+            
+            # If no news items found, try to extract from headings
+            if not news_items:
+                heading_matches = re.findall(r'<h[1-6][^>]*>(.*?)</h[1-6]>', html_content, re.IGNORECASE | re.DOTALL)
+                for heading in heading_matches[:3]:  # Limit to 3 headings
+                    clean_heading = re.sub(r'<[^>]*>', '', heading).strip()
+                    if clean_heading and len(clean_heading) > 5:
+                        news_items.append({
+                            "title": clean_heading,
+                            "date": "",
+                            "content": ""
+                        })
+            
+        except Exception as e:
+            logger.warning(f"Error extracting news from HTML: {str(e)}")
+        
+        return news_items
         
     def scrape_url(self, url: str) -> Dict:
         """Scrape content from a URL using Firecrawl extract endpoint.
@@ -358,7 +443,7 @@ class ContentScraper:
         # Handle None result (which could happen if rate limited)
         if result is None:
             logger.error(f"Failed to scrape {url} with Firecrawl (null result)")
-            return {"error": "Failed to scrape with Firecrawl", "content": "", "timestamp": datetime.now().isoformat()}
+            return {"error": "Failed to scrape with Firecrawl", "timestamp": datetime.now().isoformat()}
             
         # The _scrape_with_firecrawl method now always returns a dictionary,
         # either with content or with an error message
